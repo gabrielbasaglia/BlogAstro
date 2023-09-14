@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 const tituloPagina = 'Sobre Mim';
 
 const identidade = {
@@ -14,6 +16,10 @@ const feliz = true;
 const terminado = false;
 const meta = 3;
 
+const corHabilidade = "navy";
+const espessuraFonte = "bold";
+const caixaAlta = "uppercase";
+
 ---
 
 <html lang="pt-br">
@@ -23,6 +29,17 @@ const meta = 3;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{tituloPagina}</title>
+    <style define:vars={{corHabilidade}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .habilidade {
+        color: var(--corHabilidade);
+        font-weight: var(--espessuraFonte);
+        text-transform: var(--caixaAlta)
+      }
+    </style>
   </head>
 
   <body>
@@ -52,7 +69,7 @@ const meta = 3;
       </ul>
       <p>Minhas habilidades são:</p>
       <ul>
-        {habilidades.map((habilidade) => <li>{habilidade}</li>)}
+        {habilidades.map((habilidade) => <li class="habilidade">{habilidade}</li>)}
       </ul>
 
       {feliz && <p>Estou feliz em aprendender Astro!</p>}
