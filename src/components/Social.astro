@@ -1,0 +1,13 @@
+---
+const { plataforma, nomeUsuario } = Astro.props;
+---
+<a href={`https://www.${plataforma}.com/${nomeUsuario}`}>{plataforma}</a>
+
+<style>
+  a {
+    padding: 0.5em 1em;
+    color: white;
+    background-color: #4c1d95;
+    text-decoration: none;
+    }
+</style>
