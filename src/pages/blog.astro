@@ -1,16 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PostBlog from '../components/PostBlog.astro';
+
+const tituloPagina = "Meu Blog de Aprendizado sobre Astro";
+const todasPostagens = await Astro.glob('../pages/postagens/*.md')
 ---
 
-		<BaseLayout>
-			<h1>Meu blog sobre aprendizado Astro</h1>
+		<BaseLayout tituloPagina={tituloPagina}>
+			
 			<p>Aqui é onde postarei sobre minha jornada aprendendo.</p>
 			<ul>
-				<li>
-					<a href="/postagens/post-1">Postagem 1</a>
-					<a href="/postagens/post-2">Postagem 2</a>
-					<a href="/postagens/post-3">Postagem 3</a>
-				</li>
+				{todasPostagens.map((post) => <PostBlog url={post.url} titulo={post.frontmatter.titulo} />)}
 			</ul>
 		</BaseLayout>
 		
