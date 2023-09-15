@@ -1,8 +1,10 @@
 ---
+import Saudacao from '../components/Saudacao';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const tituloPagina = 'Meu site Astro';
 ---
 
 <BaseLayout tituloPagina={tituloPagina}>
 	<h2>O subtítulo incrível do meu blog</h2>
+		<Saudacao client:load mensagens={["Hej", "Hallo", "Hola", "Habari", "Oi"]} />
 </BaseLayout>

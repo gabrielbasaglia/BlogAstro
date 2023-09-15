@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/LayoutPostMarkdown.astro
-titulo: Minha Quarta Postagem no Blog
-autor: Aluno de Astro
+titulo: "Minha Quarta Postagem no Blog"
+autor: "Gabriel Basaglia"
 descricao: "Esta postagem irá aparecer por si mesma!"
 imagem:
   url: "https://docs.astro.build/default-og-image.png"
