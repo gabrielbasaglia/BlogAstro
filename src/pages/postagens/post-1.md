@@ -1,14 +1,14 @@
 ---
-
-titulo: 'Minha Primeira Postagem no Blog'
+titulo: "Minha Primeira Postagem no Blog"
 dataPub: 2023-09-14
-descricao: 'Esta é a primeira postagem do meu novo blog Astro.'
-autor: 'Gabriel Basaglia'
+descricao: "Esta é a primeira postagem do meu novo blog Astro."
+autor: "Gabriel Basaglia"
 imagem:
-    url: 'https://docs.astro.build/assets/full-logo-light.png'
-    alt: 'A logo completa do Astro.'
+  url: "https://docs.astro.build/assets/full-logo-light.png"
+  alt: "A logo completa do Astro."
 tags: ["astro", "blogueirando", "aprendendo em público"]
 ---
+
 # Minha Primeira Postagem no Blog
 
 Publicado em: 2023-09-14
