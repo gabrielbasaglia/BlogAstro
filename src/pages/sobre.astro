@@ -1,82 +1,72 @@
 ---
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const tituloPagina = 'Sobre Mim';
 
 const identidade = {
-  nome: "Gabriel",
-  pais: "Brasil",
-  ocupacao: "Gerente Comercial",
-  hobbies: ["Musica", "Progamação", "Games"],
-}
+	nome: 'Gabriel',
+	pais: 'Brasil',
+	ocupacao: 'Gerente Comercial',
+	hobbies: ['Musica', 'Progamação', 'Games'],
+};
 
-const habilidades = ["HTML", "CSS", "JavaScript", "React", "Astro", "Escrever Documentação"];
+const habilidades = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Escrever Documentação'];
 
 const feliz = true;
 const terminado = false;
 const meta = 3;
 
-const corHabilidade = "navy";
-const espessuraFonte = "bold";
-const caixaAlta = "uppercase";
-
+const corHabilidade = 'navy';
+const espessuraFonte = 'bold';
+const caixaAlta = 'uppercase';
 ---
 
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{tituloPagina}</title>
-    <style define:vars={{corHabilidade}}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .habilidade {
-        color: var(--corHabilidade);
-        font-weight: var(--espessuraFonte);
-        text-transform: var(--caixaAlta)
-      }
-    </style>
-  </head>
+<style define:vars={{ corHabilidade }}>
+		h1 {
+			color: purple;
+			font-size: 4rem;
+		}
+		.habilidade {
+			color: var(--corHabilidade);
+			font-weight: var(--espessuraFonte);
+			text-transform: var(--caixaAlta);
+		}
+		</style>
 
-  <body>
-    <Header />
-
-    <h1>{tituloPagina}</h1>
-    <h2>... e meu novo site Astro!</h2>
-
-    <p>
-      Estou Resolvendo o tutorial introdutório do Astro. Esta é a segunda página
-      do meu site, e é a primeira que eu mesmo construí!
-    </p>
-    <p>
-      Este site será atualizado enquanto eu completo mais desse tutorial, então
-      continue verificando e veja como minha jornada está indo!
-    </p>
-
-      <p>Aqui estão alguns fatos sobre mim:</p>
-      <ul>
-        <li>Meu nome é {identidade.nome}</li>
-        <li>Eu moro no {identidade.pais}</li> e trabalho como {identidade.ocupacao}.
-        {identidade.hobbies.length >= 2 && 
-        <li> Dois dos meus hobbies são: {identidade.hobbies[0]} e {identidade.hobbies[1]} </li>     
-        }
-      </ul>
-      <p>Minhas habilidades são:</p>
-      <ul>
-        {habilidades.map((habilidade) => <li class="habilidade">{habilidade}</li>)}
-      </ul>
-
-      {feliz && <p>Estou feliz em aprendender Astro!</p>}
-      {terminado && <p>Eu terminei esse tutorial!</p>}
-      {meta === 3 ? <p>Minha meta é terminar em 3 dias.</p> : <p>Minha meta não é em 3 dias.</p>}
-
-      <Footer />
-      
-  </body>
-</html>
+<BaseLayout>
+<body>
+	<h1>{tituloPagina}</h1>
+	<h2>... e meu novo site Astro!</h2>
+	
+	<p>
+		Estou Resolvendo o tutorial introdutório do Astro. Esta é a segunda página do meu site, e é a
+		primeira que eu mesmo construí!
+	</p>
+	<p>
+		Este site será atualizado enquanto eu completo mais desse tutorial, então continue verificando e
+		veja como minha jornada está indo!
+	</p>
+	
+	<p>Aqui estão alguns fatos sobre mim:</p>
+	<ul>
+		<li>Meu nome é {identidade.nome}</li>
+		<li>Eu moro no {identidade.pais}</li> e trabalho como {identidade.ocupacao}.
+		{
+			identidade.hobbies.length >= 2 && (
+				<li>
+					{' '}
+					Dois dos meus hobbies são: {identidade.hobbies[0]} e {identidade.hobbies[1]}{' '}
+				</li>
+			)
+		}
+	</ul>
+	<p>Minhas habilidades são:</p>
+	<ul>
+		{habilidades.map((habilidade) => <li class="habilidade">{habilidade}</li>)}
+	</ul>
+	
+	{feliz && <p>Estou feliz em aprendender Astro!</p>}
+	{terminado && <p>Eu terminei esse tutorial!</p>}
+	{meta === 3 ? <p>Minha meta é terminar em 3 dias.</p> : <p>Minha meta não é em 3 dias.</p>}
+</body>
+</BaseLayout>

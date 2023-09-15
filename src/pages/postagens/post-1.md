@@ -1,6 +1,7 @@
 ---
+layout:  ../../layouts/LayoutPostMarkdown.astro
 titulo: "Minha Primeira Postagem no Blog"
-dataPub: 2023-09-14
+dataPub: 2022-07-01
 descricao: "Esta é a primeira postagem do meu novo blog Astro."
 autor: "Gabriel Basaglia"
 imagem:
@@ -9,9 +10,6 @@ imagem:
 tags: ["astro", "blogueirando", "aprendendo em público"]
 ---
 
-# Minha Primeira Postagem no Blog
-
-Publicado em: 2023-09-14
 
 Bem-vindo ao meu _novo blog_ sobre aprendendo Astro! Aqui, eu irei compartilhar minha jornada de aprendizado enquanto eu construo um novo website.
 
